@@ -1,0 +1,98 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "reboot-to-bios",
+  "title": "Reboot to BIOS",
+  "description": "Quickly reboot your Windows PC directly to BIOS firmware settings",
+  "icon": "extension-icon.png",
+  "version": "1.0.0",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "reboot-to-bios",
+      "title": "Reboot to BIOS",
+      "description": "Quickly reboot your Windows PC directly to BIOS firmware settings",
+      "mode": "no-view",
+      "subtitle": "System",
+      "preferences": [
+        {
+          "name": "showConfirmation",
+          "type": "checkbox",
+          "required": false,
+          "title": "Confirmation Dialog",
+          "description": "Show confirmation before rebooting. Disable for instant hotkey execution.",
+          "default": true,
+          "label": "Show confirmation before rebooting"
+        },
+        {
+          "name": "rebootDelay",
+          "type": "dropdown",
+          "required": false,
+          "title": "Reboot Delay",
+          "description": "Seconds to wait before restarting. Use 0 for immediate reboot.",
+          "default": "10",
+          "data": [
+            {
+              "title": "Immediate (0s)",
+              "value": "0"
+            },
+            {
+              "title": "3 seconds",
+              "value": "3"
+            },
+            {
+              "title": "5 seconds",
+              "value": "5"
+            },
+            {
+              "title": "10 seconds",
+              "value": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cancel-reboot",
+      "title": "Cancel Reboot",
+      "description": "Cancel any pending reboot to BIOS",
+      "mode": "no-view",
+      "subtitle": "System"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.103.0",
+    "@raycast/utils": "^2.2.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "build": "ray build",
+    "publish": "npx @raycast/api@latest publish"
+  },
+  "author": "spix",
+  "platforms": [
+    "Windows"
+  ],
+  "categories": [
+    "System"
+  ],
+  "keywords": [
+    "bios",
+    "uefi",
+    "firmware",
+    "reboot",
+    "restart",
+    "boot",
+    "settings",
+    "cancel"
+  ]
+}
