@@ -214,7 +214,8 @@ export default async function main() {
     return;
   }
 
-  const delay = parseInt(preferences.rebootDelay, 10) || 10;
+  const parsedDelay = parseInt(preferences.rebootDelay, 10);
+  const delay = Number.isNaN(parsedDelay) ? 10 : parsedDelay;
 
   try {
     // For delays >= 3s, show countdown with cancel button, then reboot
